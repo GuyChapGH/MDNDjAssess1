@@ -26,7 +26,7 @@ class Comment(models.Model):
     """Model representing a comment on a blog"""
     description = models.TextField(help_text="Enter comment about blog here")
     date_time = models.DateTimeField(auto_now_add=True)
-    author = models.OneToOneField(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     # Blog can have multiple comments. Comment is for one blog.
 

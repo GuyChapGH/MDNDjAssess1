@@ -20,3 +20,10 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context var
     return render(request, 'index.html', context=context)
+
+from django.views import generic
+
+class BlogListView(generic.ListView):
+    model = Blog
+    
+    paginate_by = 5

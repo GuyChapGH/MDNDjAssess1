@@ -20,7 +20,7 @@ class Blog(models.Model):
     
     def get_absolute_url(self):
         """Return the URL to access a particular instance of the model"""
-        return reverse('blog-detail-view', args=[str(self.id)])
+        return reverse('blog-detail', args=[str(self.id)])
     
 class Comment(models.Model):
     """Model representing a comment on a blog"""
@@ -48,4 +48,4 @@ class Blogger(models.Model):
     
     def get_absolute_url(self):
         """Return the URL to access a particular instance of the model"""
-        return reverse('blogger-detail-view', args=[str(self.id)])
+        return reverse('blogger-detail', args=[str(self.id)])
